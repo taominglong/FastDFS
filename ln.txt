@@ -1,0 +1,41 @@
+ln -s /usr/lib64/libfastcommon.so /usr/local/lib/libfastcommon.so
+ln -s /usr/lib64/libfastcommon.so /usr/lib/libfastcommon.so
+ln -s /usr/lib64/libfdfsclient.so /usr/local/lib/libfdfsclient.so
+ln -s /usr/lib64/libfdfsclient.so /usr/lib/libfdfsclient.so 
+
+
+
+1.压缩命令：
+
+　　命令格式：tar  -zcvf   压缩文件名.tar.gz   被压缩文件名
+
+      可先切换到当前目录下。压缩文件名和被压缩文件名都可加入路径。
+
+ 
+
+2.解压缩命令：
+
+　　命令格式：tar  -zxvf   压缩文件名.tar.gz
+
+　　解压缩后的文件只能放在当前的目录。
+
+
+
+1) 重启后生效
+开启： chkconfig iptables on
+关闭： chkconfig iptables off
+
+2) 即时生效，重启后失效
+开启： /sbin/service iptables start
+关闭： /sbin/service iptables stop 
+
+防火墙永久开放22122端口
+/sbin/iptables -I INPUT -p tcp – – dport 22122 -j ACCEPT
+/etc/rc.d/init.d/iptables save
+#/etc/init.d/iptables restart
+
+Linux查看是否安装了某一款软件
+rpm -qa | grep "软件或者包的名字"
+
+
+nginx -s stop
